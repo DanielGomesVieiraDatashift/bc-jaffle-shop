@@ -11,7 +11,7 @@ COPY dbt_project.yml /usr/app/dbt_project.yml
 
 # RUN python3 -m venv .venv/dbt
 # RUN source .venv/dbt/bin/activate
-RUN apt install -y git-all
+RUN apt-get update && apt-get install -y git
 RUN pip install dbt-core dbt-postgres
 RUN dbt deps
 
